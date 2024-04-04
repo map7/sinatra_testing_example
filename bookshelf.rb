@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class BookshelfApp < Sinatra::Base
   get '/' do 
-    "Bookshelf"
+    "Bookshelf<button>New Bookshelf</button>"
   end
 end
 
