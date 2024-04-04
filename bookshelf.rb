@@ -2,7 +2,11 @@ require 'sinatra/base'
 
 class BookshelfApp < Sinatra::Base
   get '/' do 
-    "Bookshelf<button>New Bookshelf</button>"
+    erb :home
+  end
+
+  get '/add' do 
+    erb :add
   end
 end
 
