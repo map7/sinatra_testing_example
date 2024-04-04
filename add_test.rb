@@ -2,10 +2,8 @@ require 'test-unit'
 
 def add(a,b)
   
-  if a == nil
-    a = 0
-  elsif b.nil?
-    b = 0
+  if a.nil? or b.nil?
+    raise TypeError, "No bloody nils thanks"
   end
 
   if a.class != Integer or b.class != Integer
@@ -31,12 +29,15 @@ class AddTest < Test::Unit::TestCase
   end
 
   def test_add__nil
-    result = add(1,nil)
-    assert_equal 1,result
+    assert_raise_with_message(TypeError,"No bloody nils thanks") do
+      add(1,nil)
+    end
+    # result = add(1,nil)
+    # assert_equal 1,result
   end
 
   def test_add__nil_string
-    assert_raise_with_message(TypeError,"No bloody strings thanks") do
+    assert_raise_with_message(TypeError,"No bloody nils thanks") do
       add(nil,"foo")
     end
   end
