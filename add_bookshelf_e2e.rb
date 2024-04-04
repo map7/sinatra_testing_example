@@ -9,7 +9,7 @@ class AddBookshelf < Test::Unit::TestCase
     visit "/"
     assert page.has_content?("Bookshelves")
 
-    click_on "New Bookshelf"
+    click_on "new_bookshelf"
     assert page.has_no_content?("Bookshelves")
     assert page.has_content?("Add Bookshelf")
   end
