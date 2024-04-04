@@ -7,5 +7,6 @@ class AddBookshelf < Test::Unit::TestCase
 
   def test_adding_bookshelf
     visit "/"
+    assert page.has_content?("Bookshelf")
   end
 end  
